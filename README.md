@@ -4,7 +4,7 @@ This Directory contains the dotfiles for my system
 
 ## Requirement 
 Requirements for installation
-**Install from your own package manager
+**Install from your own package manager**
     - Git
     - Stow
 
