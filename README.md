@@ -5,8 +5,12 @@ This Directory contains the dotfiles for my system
 ## Requirement 
 Requirements for installation
 **Install from your own package manager**
-    - Git
-    - Stow
+
+### Git
+### Stow
+
+#### Ripgrep
+To allow for telescope live-grep, neovim
 
 ## Installation
 
