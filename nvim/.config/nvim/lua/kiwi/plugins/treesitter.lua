@@ -1,6 +1,6 @@
 local M = {
 	"nvim-treesitter/nvim-treesitter",
-	build = ":TSUpdate"
+	build = ":TSUpdate",
 }
 
 function M.config()
@@ -10,6 +10,10 @@ function M.config()
 		highlight = {enable = true}, 
 		indent = {enable = true}, 
 	}
+
+	for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+	  vim.api.nvim_set_hl(0, group, {})
+	end
 end
 
 return M
