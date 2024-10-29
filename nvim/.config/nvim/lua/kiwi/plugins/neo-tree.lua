@@ -14,12 +14,21 @@ end
 function M.config()
 	vim.g.neo_tree_remove_legacy_commands = 1,
 
-	require("neo-tree").setup {
+	require("neo-tree").setup({
 		close_if_last_window = true,
 		filesystem = { 
+			filtered_items = {
+				visible = true,
+				hide_dotfiles = true,
+				hide_gitignore = true,
+			},
+			follow_current_file = {
+				enabled = true,
+				leave_dirs_open = false,
+			},
 			highjack_netrw_behaviour = "open_current",
 		},
 		
-	}
+	})
 end
 return M
