@@ -8,7 +8,7 @@ local M = {
 }
 
 function M.init() 
-	vim.keymap.set("n", "<leader>n", "<cmd>Neotree toggle<cr>", {})
+  vim.keymap.set("n", "<leader>n", "<cmd>Neotree toggle reveal left<cr>", {})
 end
 
 function M.config()
@@ -17,8 +17,9 @@ function M.config()
 	require("neo-tree").setup {
 		close_if_last_window = true,
 		filesystem = { 
-			follow_current_file = true 
+			highjack_netrw_behaviour = "open_current",
 		},
+		
 	}
 end
 return M
