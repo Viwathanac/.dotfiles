@@ -1,4 +1,5 @@
-local M = { 'nvim-telescope/telescope.nvim', tag = '0.1.8',
+local M = {
+	'nvim-telescope/telescope.nvim', tag = '0.1.8',
 	cmd = "Telescope",
 	lazy = false,
 	dependencies = {
@@ -9,10 +10,10 @@ local M = { 'nvim-telescope/telescope.nvim', tag = '0.1.8',
 }
 
 function M.init()
-	vim.keymap.set({"n", "v"}, "<leader>tc", "<cmd>Telescope commands<cr>", {}) 
-	vim.keymap.set("n", "<leader>fp", "<cmd>Telescope find_files<cr>", {}) 
-	vim.keymap.set("n", "<leader>/", "<cmd>Telescope live_grep<cr>", {}) 
-	vim.keymap.set("n", "<leader>gf", "<cmd>Telescope git_files<cr>", {}) 
+	vim.keymap.set({"n", "v"}, "<leader>tc", "<cmd>Telescope commands<cr>", {})
+	vim.keymap.set("n", "<leader>fp", "<cmd>Telescope find_files<cr>", {})
+	vim.keymap.set("n", "<leader>/", "<cmd>Telescope live_grep<cr>", {})
+	vim.keymap.set("n", "<leader>gf", "<cmd>Telescope git_files<cr>", {})
 end
 
 function M.config()
@@ -84,5 +85,4 @@ function M.config()
         },
     }
 end
- 
 return M
