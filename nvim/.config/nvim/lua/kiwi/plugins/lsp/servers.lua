@@ -1,16 +1,30 @@
-local mason = require("mason")
-local mason_lspconfig = require("mason-lspconfig")
-local lspconfig = require("lspconfig")
+local lspconfig = require "lspconfig"
+local cmp_nvim_lsp = require "cmp_nvim_lsp"
+local capabilities = cmp_nvim_lsp.default_capabilities()
 
-mason.setup()
-mason_lspconfig.setup ({ ensure_installed = { "lua_ls" } })
-
--- lua
-lspconfig.lua_ls.setup {
-	capabilities = caps,
+lspconfig["lua_ls"].setup({
 	settings = {
 		Lua = {
-			diagonostics = { globals = { "vim" } }
-		}
+			format = { enable = false },
+			diagnostics = { globals = { "vim" } },
+			runtime = {
+				pathStrict = true,
+				version = "LuaJIT",
+				path = {
+					"lua/?.lua",
+					"lua/?/init.lua",
+				},
+			},
+			workspace = {
+				libray = {
+					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+					[vim.fn.stdpath("config") .. "/lua"] = true,
+				},
+			},
+		},
 	},
-}
+})
+
+lspconfig["ts_ls"].setup({
+	capabilities = capabilities,
+})

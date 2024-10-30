@@ -21,9 +21,16 @@ require("lazy").setup("kiwi.plugins", {
 	defaults = { lazy = false },
 
 	-- colorscheme that will be used when installing plugins.
-	install = { colorscheme = { "catppuccin" } },
-
+	install = {
+		colorscheme = { "catppuccin" }
+	},
+	change_detection = {
+		notify = false,
+	},
 	-- automatically check for plugin updates
-	checker = { enabled = true },
+	checker = {
+		enabled = true,
+		notify = false,
+	},
 })
 
