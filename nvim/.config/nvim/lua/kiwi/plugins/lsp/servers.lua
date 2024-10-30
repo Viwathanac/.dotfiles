@@ -25,6 +25,12 @@ lspconfig["lua_ls"].setup({
 	},
 })
 
+--Javascript
 lspconfig["ts_ls"].setup({
+	capabilities = capabilities,
+})
+
+-- Python
+lspconfig["ast-grep"].setup({
 	capabilities = capabilities,
 })
