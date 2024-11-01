@@ -42,6 +42,7 @@ function mappings.setup(client_name, buffer)
 	opts.desc = "Restart LSP"
 	vim.keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts)
 
+	vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format, {})
 
 	if mappings[client_name] then
 		mappings[client_name]()

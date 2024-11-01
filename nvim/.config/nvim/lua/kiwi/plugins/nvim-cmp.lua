@@ -15,8 +15,9 @@ local M = {
 }
 
 function M.config()
-	local luasnip = require("luasnip")
 	require("luasnip.loaders.from_vscode").lazy_load()
+
+	local luasnip = require("luasnip")
 
 	local cmp = require("cmp")
 	cmp.setup({
@@ -28,6 +29,10 @@ function M.config()
 				luasnip.lsp_expand(args.body)
 			end
 		},
+        window = {
+			documentation = cmp.config.window.bordered(),
+			completion = cmp.config.window.bordered(),
+        },
 		mapping = cmp.mapping.preset.insert({
 			['<C-k>'] = cmp.mapping.select_prev_item(),
 			['<C-j>'] = cmp.mapping.select_next_item(),
@@ -44,7 +49,11 @@ function M.config()
 			{ name = "path" },
 		}),
 	})
+
+	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+		border = "rounded",
+	})
+
 end
 
 return M
-

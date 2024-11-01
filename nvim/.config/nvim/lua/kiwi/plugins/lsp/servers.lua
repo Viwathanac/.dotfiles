@@ -30,7 +30,18 @@ lspconfig["ts_ls"].setup({
 	capabilities = capabilities,
 })
 
--- Python
-lspconfig["ast-grep"].setup({
+--Bash
+lspconfig["bashls"].setup({
 	capabilities = capabilities,
 })
+
+--More Servers
+--C, and C++
+lspconfig["clangd"].setup({
+	capabilities = capabilities,
+})
+
+lspconfig["ast_grep"].setup({
+	capabilities = capabilities,
+})
+
