@@ -12,12 +12,13 @@ function M.config()
 
 	local custom_setup= {
 		triggers = {
-			{ "auto", mode = "ncso" },
-			{ "<leader>", mode = { "n", "v" } },
+			{ "auto", mode = "nixsotc" },
+			{ "a", mode = { "n", "v" } },
 		},
 		defer = function(ctx)
 			return ctx.mode == "gc" or ctx.mode == "Comments"
 		end,
+		delay = 1000,
 		plugins = {
 			marks = true,
 			registers = true,
