@@ -6,6 +6,31 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+#FZF Colorscheme
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
+  --highlight-line \
+  --info=inline-right \
+  --ansi \
+  --layout=reverse \
+  --border=none
+  --color=bg+:#2d3f76 \
+  --color=bg:#1e2030 \
+  --color=border:#589ed7 \
+  --color=fg:#c8d3f5 \
+  --color=gutter:#1e2030 \
+  --color=header:#ff966c \
+  --color=hl+:#65bcff \
+  --color=hl:#65bcff \
+  --color=info:#545c7e \
+  --color=marker:#ff007c \
+  --color=pointer:#ff007c \
+  --color=prompt:#65bcff \
+  --color=query:#c8d3f5:regular \
+  --color=scrollbar:#589ed7 \
+  --color=separator:#ff966c \
+  --color=spinner:#ff007c \
+"
+
 # <<Setup ZINIT>> 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 # Download ZINIT if there's none
@@ -26,9 +51,6 @@ zinit light Aloxaf/fzf-tab
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 zinit snippet OMZP::archlinux
-zinit snippet OMZP::aws
-zinit snippet OMZP::kubectl
-zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
 
 # <<Auto Completion>>
@@ -73,8 +95,10 @@ zstyle 'fzf-tab-complete:cd' fzf-preview 'ls --color $realpath'
 alias vim="nvim"
 alias cls="clear"
 alias ls="ls -p --color=auto"
-alias shutdown="sudo shutdown -h now"
-alias reboot="sudo reboot"
+alias shutdown="systemctl shutdown"
+alias reboot="systemctl reboot"
+#Not working: alias pacman="sudo pacman"
+alias gs="git status"
 
 # <<FZF Shell Integration>>
 eval "$(fzf --zsh)"
