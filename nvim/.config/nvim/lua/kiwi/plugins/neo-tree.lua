@@ -8,7 +8,7 @@ local M = {
 }
 
 function M.init()
-  vim.keymap.set("n", "<leader>n", "<cmd>Neotree toggle reveal left<cr>", {})
+    vim.keymap.set("n", "<leader>n", "<cmd>Neotree toggle reveal left<cr>", {})
 end
 
 function M.config()
