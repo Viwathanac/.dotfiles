@@ -58,3 +58,8 @@ lspconfig["prismals"].setup({
 	capabilities = capabilities,
 })
 
+--HTML tags autocompletion
+lspconfig["emmet_ls"].setup({
+	capabilities = capabilities,
+})
+
