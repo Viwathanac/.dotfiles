@@ -25,23 +25,36 @@ lspconfig["lua_ls"].setup({
 	},
 })
 
---Javascript
-lspconfig["ts_ls"].setup({
-	capabilities = capabilities,
-})
-
 --Bash
 lspconfig["bashls"].setup({
 	capabilities = capabilities,
 })
 
---More Servers
 --C, and C++
 lspconfig["clangd"].setup({
 	capabilities = capabilities,
 })
 
 lspconfig["ast_grep"].setup({
+	capabilities = capabilities,
+})
+
+--Web Dev LSPs
+lspconfig["html"].setup({
+	capabilities = capabilities,
+})
+
+lspconfig["cssls"].setup({
+	capabilities = capabilities,
+})
+
+--Javascript and Typescript
+lspconfig["ts_ls"].setup({
+	capabilities = capabilities,
+})
+
+--Prisma
+lspconfig["prismals"].setup({
 	capabilities = capabilities,
 })
 
