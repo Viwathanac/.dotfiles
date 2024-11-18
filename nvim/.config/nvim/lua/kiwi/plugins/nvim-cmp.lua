@@ -50,10 +50,16 @@ function M.config()
 		}),
 	})
 
+    local handlers =  {
+        ["textDocument/hover"] =  vim.lsp.with(vim.lsp.handlers.hover, {border = "rounded"}),
+        ["textDocument/signatureHelp"] =  vim.lsp.with(vim.lsp.handlers.signature_help, {border = "rounded" }),
+    }
+
+    require 'lspconfig'.myserver.setup { handlers=handlers }
+
 	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 		border = "rounded",
 	})
-
 end
 
 return M
