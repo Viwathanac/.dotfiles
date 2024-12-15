@@ -4,7 +4,7 @@ local M = {
 	config = function()
 		local opts = { noremap = true, silent = true }
 		for i = 1, 9 do
-			vim.keymap.set("n", "<leader>h" .. i, function()
+			vim.keymap.set("n", "<leader>" .. i, function()
 				require("harpoon.ui").nav_file(i)
 			end, { desc = "Harpoon " .. i .. " file" })
 		end
