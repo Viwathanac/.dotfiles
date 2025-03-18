@@ -95,11 +95,11 @@ zstyle 'fzf-tab-complete:cd' fzf-preview 'ls --color $realpath'
 alias vim="nvim"
 alias cls="clear"
 alias ls="ls -p --color=auto"
-alias shutdown="systemctl shutdown"
+alias shutdown="systemctl poweroff"
 alias reboot="systemctl reboot"
 #Not working: alias pacman="sudo pacman"
 alias gs="git status"
 
 # <<FZF Shell Integration>>
 eval "$(fzf --zsh)"
-
+eval "$(zoxide init --cmd cd zsh)"
