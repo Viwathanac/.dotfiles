@@ -4,6 +4,14 @@ local M = {
     lazy = false,
 }
 
+function M.init()
+    local wrap = require("wrapping")
+
+    vim.keymap.set("n", "<leader>ww", wrap.toggle_wrap_mode, { desc = "Toggle Wrapping Mode" })
+    vim.keymap.set("n", "<leader>wh", wrap.hard_wrap_mode, { desc = "Hard Wrapping Mode" })
+    vim.keymap.set("n", "<leader>ws", wrap.soft_wrap_mode, { desc = "Soft Wrapping Mode" })
+end
+
 function M.config()
     local wrapping = require("wrapping")
 

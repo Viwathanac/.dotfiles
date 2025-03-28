@@ -125,6 +125,7 @@ function M.config()
 		{ "<leader>g", group = "General" },
 		{ "<leader>h", group = "Harpoon" },
 		{ "<leader>t", group = "Telescope" },
+		{ "<leader>w", group = "Wrapping" },
 	})
 end
 
