@@ -1,0 +1,8 @@
+# Documentation
+https://wiki.hypr.land/
+
+https://wiki.hypr.land/Configuring/Multi-GPU/
+Use this link when u have 2 GPUs
+
+cursor { no_hardware_cursors = true }
+^ For laggy mouse
