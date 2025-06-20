@@ -24,11 +24,11 @@ To allow for telescope live-grep, neovim
 Clone Github Repo 
 ```
 cd ~
-git clone git@github.com/Viwathanac/kiwi-dotfiles.git
+git clone git@github.com/Viwathanac/.dotfiles.git
 ```
 
 Use GNU Stow to create symlinks
 ```
-cd ~/kiwi-dotfiles/
+cd ~/.dotfiles/
 stow */
 ```
