@@ -63,3 +63,12 @@ lspconfig["emmet_ls"].setup({
 	capabilities = capabilities,
 })
 
+--Rust
+lspconfig["rust_analyzer"].setup({
+	capabilities = capabilities,
+})
+
+--JSON
+lspconfig["jsonls"].setup({
+	capabilities = capabilities,
+})

@@ -28,11 +28,15 @@ function M.config()
 			},
 			format.stylua,
 			format.isort,
-			format.clang_format,
+			format.ast_grep,
 
 			diag.shellcheck,
 			diag.eslint_d,
+            diag.clang_format,
+            diag.ast_grep,
+
 			actions.shellcheck,
+            actions.ast_grep,
 		},
 	})
 end

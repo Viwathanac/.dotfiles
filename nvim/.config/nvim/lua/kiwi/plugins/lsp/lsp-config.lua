@@ -5,6 +5,8 @@ mason_lspconfig.setup({
 	ensure_installed = {
 		"lua_ls",
 		"ts_ls",
+        "clangd",
+        "rust_analyzer",
 		"html",
 		"cssls",
 		"tailwindcss",
