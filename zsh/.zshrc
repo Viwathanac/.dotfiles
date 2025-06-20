@@ -6,6 +6,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+export PATH=$PATH:~/.local/scripts
+
 #FZF Colorscheme
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
   --highlight-line \
@@ -97,7 +99,7 @@ alias cls="clear"
 alias ls="ls -p --color=auto"
 alias shutdown="systemctl poweroff"
 alias reboot="systemctl reboot"
-#Not working: alias pacman="sudo pacman"
+alias pacman="sudo pacman"
 alias gs="git status"
 
 # <<FZF Shell Integration>>
