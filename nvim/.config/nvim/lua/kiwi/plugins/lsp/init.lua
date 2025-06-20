@@ -13,7 +13,7 @@ local M = {
 function M.config()
 	require "kiwi.plugins.lsp.lsp-config"
 	require "kiwi.plugins.lsp.servers"
-	require "kiwi.plugins.lsp.mappings"
+	require "kiwi.plugins.lsp.remap"
 end
 
 return M
