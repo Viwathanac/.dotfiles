@@ -11,7 +11,6 @@ local M = {
 		opts.desc = "Harpoon: Marked Files"
 		vim.keymap.set("n", "<leader>ha", function()
 			require("harpoon.mark").add_file()
-			require("notify")("Harpoon: Marked File")
 		end, opts)
 
 		opts.desc = "Harpoon: Toggle UI"

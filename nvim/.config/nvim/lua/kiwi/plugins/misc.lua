@@ -40,19 +40,6 @@ local M = {
 			require("colorizer").setup()
 		end,
 	},
-	{
-		"rcarriga/nvim-notify",
-		config = function()
-			require("notify").setup({
-				icons = {
-					ERROR = "",
-					WARN = "",
-					INFO = "",
-					DEBUG = "",
-					TRACE = "✎" },
-			})
-		end
-	},
 }
 
 return M
