@@ -17,14 +17,14 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Setup lazy.nvim
 -- Put all my plugins in modules/
-require("lazy").setup("kiwi.plugins", {
-	defaults = { lazy = false },
-
+require("lazy").setup({ import = "plugins" }, {
 	-- colorscheme that will be used when installing plugins.
 	install = {
-		colorscheme = { "catppuccin" }
+		missing = true,
+		colorscheme = { "catppuccin" },
 	},
 	change_detection = {
+		enabled = true,
 		notify = false,
 	},
 	-- automatically check for plugin updates
@@ -33,4 +33,3 @@ require("lazy").setup("kiwi.plugins", {
 		notify = false,
 	},
 })
-

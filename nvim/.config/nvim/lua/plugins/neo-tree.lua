@@ -1,19 +1,18 @@
 local M = {
-    "nvim-neo-tree/neo-tree.nvim", branch = "v3.x",
+	"nvim-neo-tree/neo-tree.nvim",
+	branch = "v3.x",
 	cmd = "Neotree",
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-      "MunifTanjim/nui.nvim",
-    }
+	dependencies = {
+		"nvim-tree/nvim-web-devicons",
+		"MunifTanjim/nui.nvim",
+	},
 }
 
 function M.init()
-    vim.keymap.set("n", "<leader>n", "<cmd>Neotree toggle reveal left<cr>", {})
+	vim.keymap.set("n", "<leader>n", ":Neotree toggle reveal left<cr>", { silent = true })
 end
 
 function M.config()
-	vim.g.neo_tree_remove_legacy_commands = 1
-
 	require("neo-tree").setup({
 		close_if_last_window = true,
 		filesystem = {

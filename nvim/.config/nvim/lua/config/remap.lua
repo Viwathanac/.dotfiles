@@ -22,3 +22,7 @@ vim.keymap.set("v", "K", ":m '<-2<cr>gv=gv", { silent = true })
 vim.keymap.set("v", "<", "<gv", { desc = "Dedent current selection" })
 vim.keymap.set("v", ">", ">gv", { desc = "Indent current selection" })
 
+vim.keymap.set("n", "go", ':<C-u>call append(line("."),   repeat([""], v:count1))<CR>')
+vim.keymap.set("n", "gO", ':<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>')
+
+vim.keymap.set("n", "<leader>y", [["+y]], { desc = "Yank to system clipboard" })

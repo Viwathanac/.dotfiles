@@ -1,5 +1,9 @@
 {
     "diagnostics.globals": [
-        "vim"
+        "vim",
+        "lspconfig"
+    ],
+    "diagnostics.disable": [
+        "need-check-nil"
     ]
 }
