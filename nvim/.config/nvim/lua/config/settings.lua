@@ -20,7 +20,7 @@ vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
@@ -30,3 +30,11 @@ vim.opt.incsearch = true
 vim.opt.termguicolors = true
 
 vim.opt.updatetime = 50
+
+vim.opt_local.columns = 80
+vim.opt.textwidth = 0
+vim.opt.wrapmargin = 0
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.breakindent = true
+vim.opt.showbreak = string.rep(" ", 3)
