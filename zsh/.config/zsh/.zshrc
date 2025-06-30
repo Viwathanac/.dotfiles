@@ -6,32 +6,15 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export PATH=$PATH:~/.local/scripts
+# <<ZSH Modules Configuration>>
+MODULES_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh/modules"
+if [[ -d "$MODULES_DIR" ]]; then
+    source "$MODULES_DIR/aliases.zsh"
+    source "$MODULES_DIR/fzf-macchiato.zsh"
+fi
 
-#FZF Colorscheme
-export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
-  --highlight-line \
-  --info=inline-right \
-  --ansi \
-  --layout=reverse \
-  --border=none
-  --color=bg+:#2d3f76 \
-  --color=bg:#1e2030 \
-  --color=border:#589ed7 \
-  --color=fg:#c8d3f5 \
-  --color=gutter:#1e2030 \
-  --color=header:#ff966c \
-  --color=hl+:#65bcff \
-  --color=hl:#65bcff \
-  --color=info:#545c7e \
-  --color=marker:#ff007c \
-  --color=pointer:#ff007c \
-  --color=prompt:#65bcff \
-  --color=query:#c8d3f5:regular \
-  --color=scrollbar:#589ed7 \
-  --color=separator:#ff966c \
-  --color=spinner:#ff007c \
-"
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
 # <<Setup ZINIT>> 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -59,17 +42,8 @@ zinit snippet OMZP::command-not-found
 autoload -Uz compinit && compinit
 zinit cdreplay -q
 
-zinit light-mode for \
-    zdharma-continuum/zinit-annex-as-monitor \
-    zdharma-continuum/zinit-annex-bin-gem-node \
-    zdharma-continuum/zinit-annex-patch-dl \
-    zdharma-continuum/zinit-annex-rust
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 # <<Keybind>>
-bindkey -v
+bindkey -e
 bindkey '^n' history-search-forward #Control n
 bindkey '^p' history-search-backward #Control p
 
@@ -87,21 +61,15 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 
 # <<Completion Styling>>
-# DOESN'T SEEM TO BE WORKING RIGHT NOW
 zstyle ':completion:*' menu no
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-zstyle 'fzf-tab-complete:cd' fzf-preview 'ls --color $realpath'
-
-# <<Setting Aliases>>
-alias vim="nvim"
-alias cls="clear"
-alias ls="ls -p --color=auto"
-alias shutdown="systemctl poweroff"
-alias reboot="systemctl reboot"
-alias pacman="sudo pacman"
-alias gs="git status"
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:*' use-fzf-default-opts yes
 
 # <<FZF Shell Integration>>
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+
+# Set the PATH
+export PATH="$XDG_DATA_HOME/scripts/:$PATH"
