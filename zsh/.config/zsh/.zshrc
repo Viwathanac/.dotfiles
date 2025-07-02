@@ -33,9 +33,7 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 
 # 	<<<Plugins Snippet>>>
-zinit snippet OMZP::git
 zinit snippet OMZP::sudo
-zinit snippet OMZP::archlinux
 zinit snippet OMZP::command-not-found
 
 # <<Auto Completion>>
@@ -43,7 +41,7 @@ autoload -Uz compinit && compinit
 zinit cdreplay -q
 
 # <<Keybind>>
-bindkey -e
+bindkey -v
 bindkey '^n' history-search-forward #Control n
 bindkey '^p' history-search-backward #Control p
 

@@ -52,6 +52,8 @@ alias yaupd="yay -Sy"
 # Git Aliases
 alias g='git'
 alias ga='git add'
+alias grm='git rm'
+alias grst='git restore --staged'
 alias gst='git status'
 alias gss='git status --short'
 alias gsb='git status --short --branch'
