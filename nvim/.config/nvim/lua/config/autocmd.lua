@@ -77,7 +77,7 @@ vim.api.nvim_create_autocmd("CursorHold", {
 })
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = "*",
+	pattern = "c, cpp, python, rust, sh",
 	callback = function(args)
 		require("conform").format({ bufnr = args.buf })
 	end,
