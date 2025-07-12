@@ -1,11 +1,10 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
-
-vim.opt.tw = 140
 
 vim.opt.nu = true
 vim.opt.rnu = true
@@ -31,10 +30,10 @@ vim.opt.termguicolors = true
 
 vim.opt.updatetime = 50
 
-vim.opt_local.columns = 80
-vim.opt.textwidth = 0
+vim.opt.textwidth = 130
 vim.opt.wrapmargin = 0
 vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.opt.breakindent = true
 vim.opt.showbreak = string.rep(" ", 3)
+vim.opt.colorcolumn = "80"

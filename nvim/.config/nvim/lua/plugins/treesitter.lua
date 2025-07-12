@@ -5,18 +5,8 @@ local M = {
 	dependencies = {
 		{ "nvim-treesitter/nvim-treesitter-textobjects" },
 		{ "nvim-treesitter/playground" },
-		{
-			"simrat39/symbols-outline.nvim",
-			config = function()
-				require("symbols-outline").setup({})
-			end,
-		},
 	},
 }
-
-function M.init()
-	vim.keymap.set("n", "<leader>o", "<cmd>SymbolsOutline<cr>", { desc = "Symbols Outline" })
-end
 
 function M.config()
 	local treesitter = require("nvim-treesitter.configs")

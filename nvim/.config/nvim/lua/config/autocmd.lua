@@ -7,9 +7,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end
 		local buffer = ev.buf
 		local opts = { buffer = buffer }
+		local builtin = require("telescope.builtin")
 
 		vim.keymap.set("n", "gR", function()
-			require("telescope.builtin").lsp_references()
+			builtin.lsp_references()
 		end, opts)
 
 		vim.keymap.set("n", "gD", function()
@@ -17,15 +18,15 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end, opts)
 
 		vim.keymap.set("n", "gd", function()
-			require("telescope.builtin").lsp_definitions()
+			builtin.lsp_definitions()
 		end, opts)
 
 		vim.keymap.set("n", "gi", function()
-			require("telescope.builtin").lsp_implementations()
+			builtin.lsp_implementations()
 		end, opts)
 
 		vim.keymap.set("n", "gt", function()
-			require("telescope.builtin").lsp_type_definitions()
+			builtin.lsp_type_definitions()
 		end, opts)
 
 		vim.keymap.set({ "n", "v" }, "<leader>ca", function()
@@ -37,7 +38,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end, opts)
 
 		vim.keymap.set("n", "<leader>D", function()
-			require("telescope.builtin").diagnostics()
+			builtin.diagnostics()
 		end, opts)
 
 		vim.keymap.set("n", "<leader>d", function()
@@ -45,34 +46,20 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end, opts)
 
 		vim.keymap.set("n", "K", function()
-			vim.lsp.buf.hover()
+			vim.lsp.buf.hover({ border = "rounded" })
 		end, opts)
 
 		vim.keymap.set("n", "[d", function()
-			vim.diagnostic.jump({ count = -1, float = true })
+			vim.diagnostic.jump({ count = -1, float = true, silent = true })
 		end, opts)
 
 		vim.keymap.set("n", "]d", function()
-			vim.diagnostic.jump({ count = 1, float = true })
+			vim.diagnostic.jump({ count = 1, float = true, silent = true })
 		end, opts)
 
 		vim.keymap.set("n", "<leader>ff", function()
 			require("conform").format()
 		end, opts)
-	end,
-})
-
-vim.api.nvim_create_autocmd("CursorHold", {
-	callback = function()
-		local opts = {
-			focusable = false,
-			close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
-			border = "rounded",
-			source = "always",
-			prefix = " ",
-			scope = "cursor",
-		}
-		vim.diagnostic.open_float(nil, opts)
 	end,
 })
 
