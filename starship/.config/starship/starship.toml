@@ -1,9 +1,11 @@
 format = """
-$character\
+[](teal) \
+$container\
 $hostname\
 $directory\
 $git_status\
 $git_branch\
+$character\
 """
 
 right_format = ""
@@ -15,7 +17,13 @@ follow_symlinks = true
 
 [character] 
 disabled = false
-format = '[](teal) '
+format = '$symbol '
+success_symbol = '[](green)'
+error_symbol = '[](maroon)'
+vimcmd_symbol = '[](pink)'
+vimcmd_replace_one_symbol = '[](peach)'
+vimcmd_replace_symbol = '[](peach)'
+vimcmd_visual_symbol = '[](peach)'
 
 [directory]
 disabled = false
@@ -40,6 +48,11 @@ disabled = false
 ssh_only = true
 format = '[$hostname]($style) '
 style = 'green'
+
+[container]
+disabled = false
+format = '[$symbol\[name\] ]($style)'
+style = 'blue'
 
 [palettes.catppuccin_macchiato]
 rosewater = "#f4dbd6"

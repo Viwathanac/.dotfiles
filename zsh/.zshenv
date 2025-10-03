@@ -5,7 +5,6 @@ export EDITOR="nvim"
 export TERM="alacritty"
 export TERMINAL="alacritty"
 export BROWSER="firefox"
-export BROWSER2="librewolf"
 
 # Follow XDG Base Directory Specification
 export XDG_CONFIG_HOME="$HOME/.config"

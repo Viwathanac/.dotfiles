@@ -15,10 +15,28 @@
     ],
     "modules-right": [
         "group/expand",
-        "pulseaudio",
+        "bluetooth",
         "network",
         "battery"
     ],
+    "group/expand": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 300,
+            "transition-left-to-right": false,
+            "click-to-reveal": true
+        },
+        "modules": [
+            "pulseaudio",
+            "cpu",
+            "memory",
+            "temperature"
+        ]
+    },
+    "custom/expand": {
+        "format": " ",
+        "tooltip": false
+    },
     "hyprland/window": {
         "format": "Kiwi"
     },
@@ -31,16 +49,11 @@
         },
         "sort-by-number": true,
         "persistent-workspaces": {
-            "*": 5,
-            "eDP-2": [
-                11,
-                12,
-                13
-            ]
+            "*": 5
         }
     },
     "clock": {
-        "format": "󰥔 {:%H:%M:%S}",
+        "format": "{:%b %d - 󰥔 %H:%M:%S}",
         "interval": 1,
         "tooltip-format": "<tt>{calendar}</tt>",
         "on-click": "gnome-calendar",
@@ -50,97 +63,87 @@
         }
     },
     "cpu": {
-        "format": "{usage}%",
+        "format": " {usage}%",
         "tooltip": false
     },
     "memory": {
-        "format": "{}% "
+        "format": " {percentage}%",
+        "tooltip": true,
+        "tooltip-format": "RAM: {used:0.1f}G/{total:0.1f}G\nAvailable: {avail:0.1f}G\nSwap: {swapUsed:0.1f}G/{swapTotal:0.1f}G"
     },
     "temperature": {
-        "format": "{icon} {temperatureC}°C",
+        "format": "{icon}{temperatureC}󰔄",
         "critical-threshold": 80,
         "format-icons": [
-            "",
+            "",
             "",
-            ""
-        ]
+            ""
+        ],
+        "tooltip": false
     },
     "battery": {
         "states": {
             "warning": 30,
             "critical": 15
         },
-        "format": " {icon} ",
-        "format-full": " {icon} ",
-        "format-charging": "   {capacity}%",
-        "format-plugged": "   {capacity}%",
+        "format": "{icon} {capacity}%",
+        "format-full": "{icon} ",
+        "format-charging": "󰂅 ",
+        "format-plugged": "󰂅 ",
         "format-alt": " {time} {icon}",
         "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
+            "󰁺",
+            "󰁼",
+            "󰁾",
+            "󰂀",
+            "󰁹"
         ],
         "tooltip": "true",
-        "tooltip-format": "{capacity}%"
+        "tooltip-format": "Battery: {capacity}%"
     },
     "network": {
-        "format-wifi": "",
-        "format-ethernet": "",
-        "tooltip-format": "{essid}",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": " ⚠ ",
+        "format-wifi": "󰤨",
+        "format-ethernet": "󰌗",
+        "format-linked": "󰒍",
+        "format-disconnected": "󰤭",
+        "tooltip-format": "{essid}\t{ipaddr}",
         "on-click": "nm-applet --indicator"
     },
+    "bluetooth": {
+        "format": "󰂯",
+        "format-off": "󰂯",
+        "format-connected": "󰂯",
+        "format-disabled": "󰂲",
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "[{device_alias}] - {device_address}",
+        "tooltip-format-enumerate-connected-battery": "[{device_alias}] - {device_address} : {device_battery_percentage}%",
+        "on-click-right": "blueman-manager"
+    },
     "pulseaudio": {
-        "format": "{icon}  {volume}%",
-        "format-bluetooth": "{icon} {volume}%",
-        "format-bluetooth-muted": "{icon} ",
-        "format-muted": "",
+        "format": "{volume}% {icon}",
+        "format-muted": "󰝟",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": "󰝟 {icon}",
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "hands-free": "",
+            "headset": "",
             "phone": "",
             "portable": "",
             "car": "",
             "default": [
-                "",
-                "",
-                ""
+                "󰕿",
+                "󰖀",
+                "󰕾"
             ]
         },
-        "scroll-step": 5,
-        "max-volume": 150,
-        "on-click": "pavucontrol"
+        "scroll-step": 1
         //"on-click": "blueman-tray"
     },
     "custom/arch": {
         "format": " ",
         "tooltip": false,
-        "on-click": "wofi --show drun"
-    },
-    "group/expand": {
-        "orientation": "horizontal",
-        "drawer": {
-            "transition-to-left": true,
-            "click-to-reveal": true
-        },
-        "modules": [
-            "custom/expand",
-            "cpu",
-            "memory",
-            "temperature",
-            "custom/endpoint"
-        ]
-    },
-    "custom/expand": {
-        "format": " ",
-        "tooltip": false
-    },
-    "custom/endpoint": {
-        "format": "|",
-        "tooltip": false
+        "on-click": "wlogout"
     }
 }

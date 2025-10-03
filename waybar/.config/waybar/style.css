@@ -5,8 +5,25 @@
     font-size: 16px;
 }
 
+.modules-right, .modules-left, .modules-center {
+    background-color: @base;
+    border-radius: 10px;
+}
+
+.modules-right {
+    padding: 0 10px;
+}
+
+.modules-left {
+    padding: 0 20px;
+}
+
+.modules-center {
+    padding: 0 10px;
+}
+
 window#waybar {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: @base;
     border-radius: 13px;
     transition-property: background-color;
     transition-duration: .5s;
@@ -15,7 +32,6 @@ window#waybar {
 button {
     /* Use box-shadow instead of border so the text isn't offset */
     box-shadow: inset 0 -3px transparent; 
-    /* Avoid rounded borders under each button name */
     border: none;
     border-radius: 0;
 }
@@ -28,6 +44,10 @@ button:hover {
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
+    color: @surface2;
+}
+
+#workspaces button.persistent {
     color: @surface2;
 }
 
@@ -53,11 +73,15 @@ button:hover {
     box-shadow: inset 0 -3px #ffffff;
 }
 
-#clock, #battery, #cpu, #memory, #temperature, #network, #pulseaudio {
+#clock, #battery, #cpu, #memory, #temperature, #network, #pulseaudio , #bluetooth, #pulseaudio-slider{
     padding: 0 10px;
 }
 
-#pulseaudio {
+#pulseaudio{
+    color: @maroon;
+}
+
+#pulseaudio.muted {
     color: @maroon;
 }
 
@@ -71,6 +95,13 @@ button:hover {
 
 #memory{
     color: @mauve;
+}
+
+#bluetooth {
+    color: @blue;
+}
+#bluetooth:hover {
+    color: @lavender;
 }
 
 #network {
@@ -98,7 +129,7 @@ button:hover {
 }
 
 #clock {
-    color: white;
+    color:@text;
 }
 
 #clock:hover {
@@ -107,23 +138,6 @@ button:hover {
 
 #window {
     color: @rosewater;
-}
-
-.modules-right, .modules-left, .modules-center {
-    background-color: @base;
-    border-radius: 15px;
-}
-
-.modules-right {
-    padding: 0 10px;
-}
-
-.modules-left {
-    padding: 0 20px;
-}
-
-.modules-center {
-    padding: 0 10px;
 }
 
 #battery.charging, #battery.plugged {
@@ -165,7 +179,6 @@ label:focus {
     border-radius: 0px;
 }
 
-/*TODO: Make hovering on expand look pretty*/
 #custom-expand:hover, #custom-endpoint:hover{
     color: @text;
 }
