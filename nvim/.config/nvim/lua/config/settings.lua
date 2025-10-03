@@ -30,9 +30,9 @@ vim.opt.termguicolors = true
 
 vim.opt.updatetime = 50
 
+vim.opt.wrap = false
 vim.opt.textwidth = 130
 vim.opt.wrapmargin = 0
-vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.opt.breakindent = true
 vim.opt.showbreak = string.rep(" ", 3)

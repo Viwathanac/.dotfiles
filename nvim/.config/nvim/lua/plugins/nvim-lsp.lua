@@ -33,6 +33,7 @@ function M.config()
 			"clangd",
 			"bashls",
 			"rust_analyzer",
+			"gopls",
 		},
 		automatic_installation = true,
 	})

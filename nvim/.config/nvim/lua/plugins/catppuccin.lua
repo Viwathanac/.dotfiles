@@ -7,11 +7,14 @@ local M = {
 
 function M.config()
 	require("catppuccin").setup({
-		flavour = "mocha", -- latte, frappe, macchiato, mocha
+		flavour = "macchiato",
 		background = { -- :h background
 			light = "latte",
 			dark = "mocha",
 		},
+		custom_highlights = function(colors)
+			return { LineNr = { fg = colors.overlay0 } }
+		end,
 		transparent_background = false, -- disables setting the background color.
 		show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
 		term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)

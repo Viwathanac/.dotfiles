@@ -3,16 +3,19 @@ vim.lsp.enable({
 	"bashls",
 	"rust_analyzer",
 	"clangd",
+	"jsonls",
+	"gopls",
+	"sqls",
 })
 
 vim.diagnostic.config({
 	virtual_text = true,
-	--virtual_lines = true,
 	underline = true,
 	update_in_insert = false,
 	severity_sort = true,
 	float = {
 		header = "false",
+		style = "minimal",
 		border = "rounded",
 		source = true,
 	},

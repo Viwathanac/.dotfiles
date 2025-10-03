@@ -14,6 +14,7 @@ function M.config()
 			python = { "isort", "black" },
 			--rust = { "rustfmt" },
 			sh = { "shfmt" },
+			go = { "gofmt" },
 		},
 	})
 end
