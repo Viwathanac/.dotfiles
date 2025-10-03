@@ -1,0 +1,10 @@
+hyprland
+hyprpaper
+hyprsunset
+xdg-desktop-portal
+slurp
+grim
+mako
+hyprlock
+hypridle
+hyprpolkitagent
