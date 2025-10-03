@@ -1,0 +1,11 @@
+$keybind = qwerty
+$workspace_one   = 1
+$workspace_two   = 2
+$workspace_three = 3
+$workspace_four  = 4
+$workspace_five  = 5
+$workspace_six   = 6
+$workspace_seven = 7
+$workspace_eight = 8
+$workspace_nine  = 9
+$workspace_ten   = 0

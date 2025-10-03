@@ -1,0 +1,11 @@
+$keybind = dvorak
+$workspace_one   = plus
+$workspace_two   = bracketleft
+$workspace_three = braceleft
+$workspace_four  = parenleft
+$workspace_five  = ampersand
+$workspace_six   = equal
+$workspace_seven = parenright
+$workspace_eight = braceright
+$workspace_nine  = bracketright
+$workspace_ten   = asterisk
