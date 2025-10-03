@@ -1,11 +1,14 @@
-# Colors
-height=200
-width=300
+# Colors : macchiato - sky
+background-color = #24273a
+text-color = #cad3f5
+border-color = #91d7e3
+progress-color = over #363a4f
 
-background-color=#24273a
-text-color=#cad3f5
-border-color=#91d7e3
-progress-color=over #363a4f
+height = 100
+width = 300
+margin = 5
+
+font = JetBrainsMono
 
 [urgency=high]
 border-color=#f5a97f
