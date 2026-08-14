@@ -1,0 +1,10 @@
+{
+    "diagnostics.global": [
+        "hl"
+    ],
+    "workspace": {
+        "library": [
+            "/usr/share/hypr/stubs"
+        ]
+    }
+}
