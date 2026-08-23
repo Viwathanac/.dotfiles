@@ -16,15 +16,12 @@ https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 https://www.gnu.org/software/stow/stow.html
 ```
 
-#### Ripgrep
-To allow for telescope live-grep, neovim
-
 ## Installation
 
 Clone Github Repo 
 ```
 cd ~
-git clone git@github.com/Viwathanac/.dotfiles.git
+git clone https://github.com/Viwathanac/.dotfiles.git
 ```
 
 Use GNU Stow to create symlinks

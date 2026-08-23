@@ -1,0 +1,23 @@
+# Colors mocha-sapphire
+
+background-color=#1e1e2e
+text-color=#cdd6f4
+border-color=#f5e0dc
+progress-color=over #313244
+
+default-timeout=5000
+font=JetBrainsMono
+anchor=top-right
+
+height=100
+width=400
+margin=5
+outer-margin=0
+padding=10
+
+border-size=2
+border-radius=10
+
+
+[urgency=high]
+border-color=#fab387

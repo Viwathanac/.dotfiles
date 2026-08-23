@@ -1,0 +1,10 @@
+vim.lsp.enable({
+    "lua_ls",
+    "rust_analyzer",
+    "qmlls",
+    "gopls",
+    "clangd",
+    "bashls",
+    "jsonls",
+    "marksman",
+})
