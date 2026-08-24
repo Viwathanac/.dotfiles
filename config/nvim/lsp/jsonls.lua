@@ -5,4 +5,5 @@ return {
     init_options = {
         provideFormatter = true,
     },
+    capabilities = require('cmp_nvim_lsp').default_capabilities()
 }

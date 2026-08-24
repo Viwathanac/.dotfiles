@@ -2,7 +2,8 @@ return {
     cmd = { 'qmlls' },
     filetypes = { 'qml', 'qmljs' },
     root_markers = { '.git', '.ini' },
-    settings = {
-        semantic_token = false
+    capabilities = {
+        semanticTokensProvider = false,
+        require('cmp_nvim_lsp').default_capabilities()
     }
 }
