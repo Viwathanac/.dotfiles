@@ -7,10 +7,7 @@ local M = {
 }
 
 function M.init()
-    local oil = require("oil")
-    vim.keymap.set("n", "<leader>pv", function()
-        oil.open()
-    end)
+    vim.keymap.set("n", "-", "<CMD>Oil<CR>")
 end
 
 local detail = false
