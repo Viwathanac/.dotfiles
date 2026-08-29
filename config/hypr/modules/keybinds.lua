@@ -35,8 +35,8 @@ hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.move({ direction = "down", grou
 hl.bind(altMod .. " + SHIFT + H", hl.dsp.group.move_window({ forward = false }))
 hl.bind(altMod .. " + SHIFT + L", hl.dsp.group.move_window({ forward = true }))
 
-for i = 1, 10 do
-    local key = i % 10
+for i = 1, 5 do
+    local key = i
     hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
     hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end

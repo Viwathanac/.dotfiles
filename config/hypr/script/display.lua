@@ -19,7 +19,8 @@ function M.setup(monitor)
             hl.monitor({ --Disable Laptop
                 output = Laptop,
                 disabled = true,
-            })
+            }),
+            hl.workspace_rule({ workspace = "r[1-5]", monitor = Monitor })
         })
     else
         return hl.config({
@@ -29,7 +30,8 @@ function M.setup(monitor)
                 mode = "1920x1080@144",
                 position = "0x0",
                 scale = "1",
-            })
+            }),
+            hl.workspace_rule({ workspace = "r[1-5]", monitor = Laptop })
         })
     end
 end

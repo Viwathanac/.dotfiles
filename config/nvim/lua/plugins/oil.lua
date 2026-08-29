@@ -42,6 +42,9 @@ function M.config()
         },
         constrain_cursor = "editable",
         watch_for_changes = false,
+        view_options = {
+            show_hidden = true
+        },
         keymaps = {
             ["g?"] = { "actions.show_help", mode = "n" },
             ["<CR>"] = "actions.select",

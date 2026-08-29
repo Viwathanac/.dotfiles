@@ -1,4 +1,5 @@
 /.git
 /zsh/.zcompdump
 /config/nvim/lazy-lock.json
+/config/hypr/hyprsunset
 /config/tmux/plugins
