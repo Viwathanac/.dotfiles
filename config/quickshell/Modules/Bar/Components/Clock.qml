@@ -9,8 +9,7 @@ Item {
     implicitHeight: parent.implicitHeight
     implicitWidth: clockModule.implicitWidth
 
-    readonly property string moduleIcon: ""
-    readonly property color moduleColor: Colors.mauve
+    readonly property color moduleColor: Colors.rosewater
     readonly property int moduleSize: 16
 
     SystemClock {
@@ -32,17 +31,20 @@ Item {
         anchors.centerIn: parent
         spacing: 9
         Text {
-            text: {
-                Qt.formatTime(clock.date, "hh:mm AP");
-            }
+            text: Qt.formatTime(clock.date, "hh:mm AP")
             color: root.moduleColor
             font.family: Global.font
             font.pixelSize: root.moduleSize
         }
+        Rectangle {
+            id: separator
+            implicitWidth: 5
+            implicitHeight: implicitWidth
+            radius: implicitHeight
+            color: root.moduleColor
+        }
         Text {
-            text: {
-                "- " + Qt.formatDate(clock.date, "yyyy-MM-dd");
-            }
+            text: Qt.formatDate(clock.date, "yyyy-MM-dd")
             color: root.moduleColor
             font.family: Global.font
             font.pixelSize: root.moduleSize
