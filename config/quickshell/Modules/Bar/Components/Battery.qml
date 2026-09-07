@@ -20,7 +20,7 @@ Item {
         } else if (batteryValue <= lowBatteryThreshold) {
             return Qt.alpha(Colors.red, 0.7);
         }
-        return Qt.alpha(Colors.lavender, 0.9);
+        return Qt.alpha(Colors.lavender, 0.5);
     }
 
     MouseArea {
@@ -73,8 +73,8 @@ Item {
         Rectangle {
             id: batTip
 
-            implicitWidth: 2.3
-            implicitHeight: 8
+            implicitWidth: 2
+            implicitHeight: 6
             topRightRadius: 2
             bottomRightRadius: 2
             color: root.moduleColor
