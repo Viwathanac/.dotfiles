@@ -17,8 +17,11 @@ function M.config()
             solid = false,
         },
         auto_integrations = true,
+        integrations = {
+            notify = true
+        },
         transparent_background = false,
-        term_colors = true,
+        term_colors = false,
         custom_highlights = function(colors)
             return {
                 CursorLineNr = { fg = colors.rosewater },

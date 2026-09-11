@@ -4,3 +4,4 @@
 /config/quickshell/qmlls.ini
 /config/hypr/hyprsunset
 /config/tmux/plugins
+/config/tmux/tmux-client*
