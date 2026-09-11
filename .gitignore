@@ -1,7 +1,7 @@
 /.git
 /zsh/.zcompdump
 /config/nvim/lazy-lock.json
-/config/quickshell/qmlls.ini
+/config/quickshell/.qmlls.ini
 /config/hypr/hyprsunset
 /config/tmux/plugins
 /config/tmux/tmux-client*
